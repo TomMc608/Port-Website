@@ -15,7 +15,7 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ body {
   }
 }
 nav {
-  background-color: #282c34;
+  
   padding: 1rem;
 }
 
@@ -55,3 +55,18 @@ nav a {
   color: white;
   text-decoration: none;
 }
+
+
+/* Make text bright blue in HomePage */
+.Container {
+  color: #000000;
+}
+
+
+/* Make text appear on top of the matrix background */
+.Container {
+  z-index: 1;
+  position: relative;
+}
+
+
