@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import HomePage from './HomePage';
+import AboutMe from './AboutMe';
+import MyProjects from './MyProjects';
+
+const buttonStyle = {
+  padding: "10px 20px",
+  margin: "0 10px",
+  borderRadius: "4px",
+  background: "#007bff",
+  color: "white",
+  textDecoration: "none",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <Link to="/" style={buttonStyle}>Home</Link>
+          <Link to="/about-me" style={buttonStyle}>About Me</Link>
+          <Link to="/my-projects" style={buttonStyle}>My Projects</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/my-projects" element={<MyProjects />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
